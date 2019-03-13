@@ -8,6 +8,7 @@ Acronyms:
     Time of Flight (TOF)
     Micro Channel Plate (MCP)
     Printed Circuit Board (PCB)
+    Surface Mount Component (SMC)
 
 Products:
 
@@ -19,16 +20,13 @@ Products:
     C)  Feed thru device, no capacitor, no analog switch.
 	    For testing insertion effects of device.
 
-    D)  Back-to-back Type-N flange connectors.
-	    See if flange bolts provide adaquate ground path.
+    D)  Analog switch with only DC control.
 
-    E)  Analog switch with only DC control.
+    E)  Analog switch with level translator.
 
-    F)  Analog switch with level translator.
+    F)  Add power supply.
 
-    G)  Add power supply.
-
-    H)  Add digital delay control.
+    G)  Add digital delay control.
 
 
 Situation:
@@ -75,7 +73,7 @@ Best vision:  (2019-03-11)
 
     N-Type connectors adapt to SMA connectors on PCB.
 
-    Capacitor switched to +5 V, which is also an AC ground.
+    Capacitor is switched to +5 V, which is also an AC ground.
     Analog switch operates above ground.
     Thus on the analog switch, NO signal is +5 V, and a -5 V pulse is 0 V.
 
@@ -141,28 +139,97 @@ Connector types:
 
 Purpose:
     Proof of concept.
-    Does adding capacitance produce the desired effect?
     Measure MCP effective capacitance.
+    Does adding capacitance produce the desired effect?
 
     Somehow add a 100 pF capacitor in-parallel to the N-Type connectors.
 
 Design:
-    Avoid the need to make a PCB.  We want to first see if the idea even has a
-    chance of working.
+    Avoid the need to make a PCB.  We want to first see if the idea even has
+    a chance of working.
 
-    Use an SMA T-connector F-M-F, with the Male connecting to an N-type
-    adapter on the MCP.
+    Use an SMA T-connector F-M-F, with the Female ends connecting to N-type
+    adapters on the MCP and Digitizer cable.
 
     Use SMA board edge connectors (Jack, Female socket) with capacitor
     soldered between the pin and ground lug.  This is then easily connected
     to the Male T port.  Make several with different capacitor values.
+    Can change capacitors without powering-down, since the Digitizer is
+    always connected to the MCP thru the T-connector.
 
     Place first parts order to implement at least this.
 
     Another idea:
     Use two SMA PCB connectors soldered back-to-back.  Add capacitor between
-    center conductor and grounding prongs.
-    This is very in-line, but is harder to make.
+    center conductor and grounding prongs.  This is very in-line, but is
+    harder to make.
+
+Detail Design:
+
+    These 3 connector fittings are in-line from MCP to Digitizer, and provide
+    an SMA Male port on which to attach capacitors.
+
+	Adapter, N Male to SMA Male, Straight, (Amphenol 242114)
+
+	SMA T-shape F-M-F, (Amphenol 132217)
+
+	Adapter, SMA Male to N Female, Straight (Amphenol 242112)
+
+    An SMA right angle connector is added on the output to Digitizer, since
+    there is not enough room (only 4 inchs) for everything to stack in a
+    straight line:
+
+	SMA Right angle M-F (Amphenol 132172)
+
+    Capacitors, SMC (Surface Mount Component) type, are mounted on the
+    center pin and ground lugs of this SMA Jack.
+    A size 1210 SMC is 0.126 inch long, which is just right to span the
+    connector, which is 0.125 inch from center line of center pin to outer
+    edge of the ground lug.
+
+	SMA Jack, Female Socket, Board edge launch, 0.250 inch Wide
+	    (RF Solutions CON-SMA-EDGE-S)
+
+    Capacitors are choosen in size 1210 SMC package.  Choose C0G dielectric,
+    which has the best stability.  This is a fairly large package for the
+    capacitance value, so they tend to have higher voltage ratings, which is
+    fine.  These are standard values, which are in a logarithmic progression,
+    which is what we want to see effect.  Mica capacitors were also considered,
+    and are also very stable, but cost more and did not seem to have any
+    significant advantage for our purpose.
+
+    Capacitors, High Voltage, Ceramic C0G Dielectric:
+
+	Kemet C1206C220JBGAC7800   22 pF,  630V, SMC 1206  5%
+	Kemet C1210C470JDGAC7800   47 pF, 1000V, SMC 1210  5%
+	Kemet C1210C101GCGAC7800  100 pF,  500V, SMC 1210  2%
+	Kemet C1210C221JDGAC7800  220 pF, 1000V, SMC 1210  5%
+	Kemet C1210C471JDGACTU    470 pF, 1000V, SMC 1210  5%
+
+    Now everything simply screws together, no PCB needed.
+
+Experiment:
+
+    Connect SMA T-connector at the MCP and in-line to the Digitizer using
+    the N-Type adapter fittings.  This requires MCP power-down, and caution
+    to discharge any high-voltage on the MCP anode.
+
+    Operate the TOF system as normal, with nothing attached to the SMA T port.
+
+    The idea is to try a range of capacitor values from 22 pF to 470 pF.
+    The 22 pF represents the minimum expected load capacitance on the
+    final product with switch OFF.
+    The high-end capacitance is to see what too much looks like.
+
+    Take multiple shots (spectra) with each capacitor value.  Possibly in
+    conditions that make averaging the spectra meaningful.
+
+    The sample should be something that shows representative small and large
+    peaks, and is very repeatable.  We are trying to test the electronic
+    system, not the sample.
+
+    The capacitance of the MCP can be estimated by measuring the change
+    in voltage of a large peak when a known capacitance is added.
 
 
 ----------------------------------------------------------------------------

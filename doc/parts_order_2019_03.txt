@@ -1,0 +1,43 @@
+2019-03-11
+		Parts Order - Fixed capacitor experiment
+		----------------------------------------
+
+First order, to get started.
+This is the minimum needed to try a set of capacitors on the TOF.
+
+DigiKey Cart Share:  https://www.digikey.com/short/p8z3qv
+    Total:  $84.09  10 items
+    Use this link to get your own "cart" of these parts.
+    Also use to access detailed part information and data sheets.
+
+
+Interface N-Type connectors to SMA
+
+    Adapter, N Male to SMA Male, Straight
+ 1	$16.36  DigiKey  ACX1343-ND  Amphenol 242114
+
+    Adapter, N Female to SMA Male, Straight
+ 1	$15.37  DigiKey  ACX1339-ND  Amphenol 242112
+
+SMA fittings
+
+    SMA T-shape F-M-F
+ 1	$14.90  DigiKey  ACX1433-ND  Amphenol 132217  T-shape F-M-F
+
+    SMA Right angle F-M
+ 1	$9.60  DigiKey  ACX1249-ND  Amphenol 132172  Right angle F-M
+
+SMA to Mount Capacitor
+
+    SMA Jack, Female Socket, Board edge launch, 0.250 W
+ 6	$1.74  DigiKey  CON-SMA-EDGE-S-ND  RF Solutions CON-SMA-EDGE-S
+
+Capacitors, SMC (Surface Mount Component)
+
+    Kemet  High Voltage C0G Dielectric, 500 - 3,000 VDC
+ 2	$1.05  DigiKey  Kemet C1206C220JBGAC7800   22 pF,  630V, SMC 1206  5%
+ 2	$1.93  DigiKey  Kemet C1210C470JDGAC7800   47 pF, 1000V, SMC 1210  5%
+ 2	$1.94  DigiKey  Kemet C1210C101GCGAC7800  100 pF,  500V, SMC 1210  2%
+ 2	$1.97  DigiKey  Kemet C1210C221JDGAC7800  220 pF, 1000V, SMC 1210  5%
+ 2	$1.82  DigiKey  Kemet C1210C471JDGACTU    470 pF, 1000V, SMC 1210  5%
+

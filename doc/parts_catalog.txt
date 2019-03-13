@@ -1,0 +1,222 @@
+2019-03-12
+		Parts Catalog
+		-------------
+
+This is a listing of parts I have examined for this project.
+Attributes important for this application are included to help make choices
+among possible alternatives.
+This list is NOT comprehensive, it is just what I looked at.
+
+
+----------------------------------------------------------------------------
+## N-Type RF Connectors
+----------------------------------------------------------------------------
+
+Receptical, Male Pin
+
+    N-Type Receptical, Male Pin, Flange mount, Solder cup
+	-- Rosenberger
+	Knurled plus Hex flats, 17.5 mm deep.
+	Solder cup 9.5 mm from flange.
+	Frequency:  11 GHz
+	Body finish:  Flash white bronze over silver.
+	Overall 37.0 mm, Front side 25.5 mm
+	Many specifications.  Complete dimensions.  Nice.
+	https://catalog.rosenberger.com/images/documents/db/53S401-200N5.pdf
+	$18.98  DigiKey  1868-1373-ND, Rosenberger 53S401-200N5  solder cup
+
+    N-Type Receptical, Male Pin, Flange mount, Solder cup
+	Frequency:  11 GHz
+	Body finish:  NEXCOTE
+	Deeper profile, solder cup 10.4 mm from flange.
+	Overall 30.4 mm.
+	http://www.amphenolrf.com/media/downloads/3837/172118.pdf
+ >	$9.22  DigiKey  ACX1166-ND, Amphenol 172118  solder cup
+
+    N-Type Receptical, Male Pin, Flange mount, Solder tab
+	Frequency:  11 GHz
+	Body finish:  NEXCOTE
+	Very low profile, solder tab 2.54 mm long by 1.65 mm wide.
+	Flush profile, PCB lay flat on flange.
+	Overall 23.14 mm.
+	http://www.amphenolrf.com/media/downloads/1366/172196.pdf
+ >	$9.36  DigiKey  ARF2992-ND, Amphenol 172196  solder tab 2.5 mm long
+
+    N-Type Receptical, Male Pin, Flange mount, Solder cup
+	Frequency:  11 GHz
+	Body finish:  Silver
+	Overall 27.8 mm.
+	More expensive for silver, sharper edges, like Amphenol 172118.
+	http://www.amphenolrf.com/media/downloads/3651/c000-49000.pdf
+	$33.84  DigiKey  ARF2022-ND  Amphenol 000-49000  solder cup
+
+
+Receptical, Female Socket (lots of these)
+
+    N-Type Receptical, Female Socket, PCB pins, Bulkhead frontside nut.
+	-- Amphenol RF Division
+	Frequency:  11 GHz
+	Is the only PCB pin straight connector.
+	http://www.amphenolrf.com/media/downloads/168/172243.pdf
+ >	$16.67  DigiKey  ACX1442-ND  Amphenol 172243  PCB pins
+
+    N-Type Receptical, Female Socket, Right-angle, PCB pins, Frontside nut.
+	-- Amphenol RF Division
+	Frequency:  11 GHz
+	Is the only PCB pin angle connector.
+	http://www.amphenolrf.com/media/downloads/343/172234.pdf
+ >	$16.86  DigiKey  ACX1443-ND  Amphenol 172234  PCB pins, right angle
+
+
+N-Type to N-Type Adapters, Free Hanging
+
+    N-Type Plug to Plug, Right angle
+	-- Amphenol RF Division
+	Frequency:  11 GHz
+	Overall:  36.5 mm Corner to Shell
+	http://www.amphenolrf.com/media/downloads/1275/172261.pdf
+ >	$29.38  DigiKey  ACX1485-ND  Amphenol 172261  right angle
+
+    N-Type Plug to Plug, Straight
+	-- Rosenberger
+	Frequency:  11 GHz
+	Overall:  42.8 mm, Shell nuts 17.5 mm deep
+	Shell nuts with 18 mm Hex flats.
+	https://catalog.rosenberger.com/images/documents/db/53S101-S00N5.pdf
+ >	$20.24  DigiKey  1868-1353-ND  Rosenberger  53S101-S00N5  straight
+
+    N-Type Plug to Plug, Straight
+	-- Amphenol RF Division
+	Frequency:  11 GHz
+	Overall:  41.4 mm
+ >	$11.48  DigiKey  ACX1168-ND  Amphenol 172122  straight
+
+    N-Type Plug to Jack, Right angle
+	-- Amphenol RF Division
+	Frequency:  11 GHz
+	Overall:  36.6 mm Corner to Shell, 32.10 Corner to Jack
+	http://www.amphenolrf.com/media/downloads/1723/172126.pdf
+	$12.15  DigiKey  ACX1171-ND  Amphenol 172126  right angle
+
+    N-Type T-shape  F-M-F
+	Overall:  44.5 mm top, 37.6 mm vertical
+	http://www.amphenolrf.com/media/downloads/664/172125.pdf
+ >	$21.11  DigiKey  ACX1446-ND  Amphenol 172125  T-shape F-M-F
+
+
+N-Type to SMA Adapters, Free Hanging
+
+    N Male to SMA Male, Straight
+	Overall:  32.2 mm
+	SMA:  Nickel
+	Has a knurled base.
+	http://www.amphenolrf.com/media/downloads/2264/242114.pdf
+ >	$16.36  DigiKey  ACX1343-ND  Amphenol 242114
+
+    N Male to SMA Male, Straight
+	Overall:  28 mm
+	N-type shell:  Knurled and Hex flats 18 mm
+	SMA:  Gold
+	https://catalog.rosenberger.com/images/documents/db/32S153-S00L5.pdf
+	$41.48  DigiKey  1868-1238-ND, Rosenberger 32S153-S00L5 
+
+    N Female to SMA Male, Straight
+	Overall:  28.3 mm
+    	http://www.amphenolrf.com/media/downloads/2203/242112.pdf
+ >	$15.37  DigiKey  ACX1339-ND  Amphenol 242112
+
+
+    N Female bulkhead to SMA Male, RG-316 cable, 100 mm long
+	Frequency:  6 GHz
+ >	$16.69  DigiKey  931-1288-ND  Taoglas CAB.955
+
+    N Male to SMA Male, RG-58 cable
+	Is more common.
+	Frequency:  12.4 GHz
+	https://belfuse.com/resources/cinch-brochures/CCS%20Johnson%20RF%20Cable%20Assembly%20Guide.pdf
+	$18.57  DigiKey  J10342-ND  Cinch 415-0059-MM250, RG-58, 250 mm
+	$13.92  DigiKey  J6712-ND   Cinch 415-0059-012,   RG-58, 305 mm
+
+
+----------------------------------------------------------------------------
+## SMA RF Connectors
+----------------------------------------------------------------------------
+
+    SMA Jack, Female Socket, Board edge launch, 0.375 W
+	-- Cinch Connectivity Solutions Johnson
+	Center pin:  cylinder 0.030 inch dia (20 AWG), 0.187 (4.75 mm) long.
+	Ground prongs:  0.187 long
+	Body:  0.312 H, 0.375 W
+	http://www.belfuse.com/resources/Johnson/drawings/dr-1420701801.pdf
+ >	$3.73  DigiKey  J502-ND,  Cinch 142-0701-801
+
+    SMA Jack, Female Socket, Board edge launch, 0.375 W
+	-- Cinch Connectivity Solutions Johnson
+	Center pin:  flattend 0.020 W, 0.010 thick, 0.075 long.
+	Ground prongs:  0.187 long
+	Body:  0.312 H, 0.375 W
+	http://www.belfuse.com/resources/Johnson/drawings/dr-1420701851.pdf
+ >	$4.70  DigiKey  J658-ND,  Cinch 142-0701-851
+
+    SMA Jack, Female Socket, Board edge launch, 0.250 W
+	Center pin:  cylinder 0.030 inch dia (20 AWG), 0.150 long.
+	Ground prongs:  0.150 long
+	Body:  0.250 H, 0.250 W
+	http://www.belfuse.com/resources/Johnson/drawings/dr-1420711821.pdf
+ >	$5.38  DigiKey  J629-ND,  Cinch 142-0711-821
+
+    SMA Jack, Female Socket, Board edge launch, 0.250 W
+	Center pin:  cylinder 0.030 inch dia (20 AWG), 0.150 long.
+	Ground prongs:  0.150 long
+	Body:  0.250 H, 0.250 W
+	Looks same as Cinch, but a lot cheaper.  Both rated 18 GHz.
+	https://media.digikey.com/pdf/Data%20Sheets/RF%20Solutions%20PDFs/CON-SMA-EDGE.pdf
+ >	$1.74  DigiKey  CON-SMA-EDGE-S-ND  RF Solutions CON-SMA-EDGE-S
+
+
+SMA to SMA Adapters, Free Hanging
+
+    SMA T-shape F-F-F
+	Overall:  23.2 mm top, 15.1 mm vertical
+	http://www.amphenolrf.com/media/downloads/814/132216.pdf
+	$14.42  DigiKey  ACX1432-ND  Amphenol 132216  T-shape F-F-F
+
+    SMA T-shape F-M-F
+	Overall:  23.2 mm top, 16.7 mm vertical
+	http://www.amphenolrf.com/media/downloads/2487/132217.pdf
+ >	$14.90  DigiKey  ACX1433-ND  Amphenol 132217  T-shape F-M-F
+
+    SMA Right angle F-M
+	http://www.amphenolrf.com/media/downloads/3213/132172.pdf
+ >	$9.60  DigiKey  ACX1249-ND  Amphenol 132172  Right angle F-M
+
+
+----------------------------------------------------------------------------
+## pF Capacitors, Mica and Ceramic
+----------------------------------------------------------------------------
+
+100 pF range for TOF Switched Capacitor
+
+    Package sizes
+	SMC 0805 (???? Metric) 0.079 L, 0.049 W
+	SMC 1210 (3225 Metric) 0.126 L, 0.098 W
+	SMC 1812 (4532 Metric) 0.177 L, 0.126 W
+
+    Cornell Dubilier Mica Types MC and MCN Multilayer RF Capacitors
+	$2.92  DigiKey  CDE MC12ED220J-F    22 pF,  500V, SMC 1210  5%
+	$2.65  DigiKey  CDE MC12FA470J-F    47 pF,  100V, SMC 1210  5%
+	$5.38  DigiKey  CDE MC12FF500F-F    50 pF, 1000V, SMC 1210  1%
+	$2.86  DigiKey  CDE MC12FA101J-F   100 pF,  100V, SMC 1210  5%
+	$3.20  DigiKey  CDE MC12FA201J-F   200 pF,  100V, SMC 1210  5%
+	$3.20  DigiKey  CDE MC12FA221J-F   220 pF,  100V, SMC 1210  5%
+
+    Kemet  High Voltage C0G Dielectric, 500 - 3,000 VDC
+	https://api.kemet.com/component-edge/download/datasheet/C1210C101GCGAC7800.pdf
+ >	$1.05  DigiKey  Kemet C1206C220JBGAC7800   22 pF,  630V, SMC 1206  5%
+	$0.86  DigiKey  Kemet C1210C220J5GACTU     22 pF,   50V, SMC 1210  5%
+	$1.93  DigiKey  Kemet C1210C470JDGAC7800   47 pF, 1000V, SMC 1210  5%
+	$1.94  DigiKey  Kemet C1210C101GCGAC7800  100 pF,  500V, SMC 1210  2%
+	$2.69  DigiKey  Kemet C1210X201JBGACAUTO  200 pF,  630V, SMC 1210  5%
+	$1.97  DigiKey  Kemet C1210C221JDGAC7800  220 pF, 1000V, SMC 1210  5%
+	$1.82  DigiKey  Kemet C1210C471JDGACTU    470 pF, 1000V, SMC 1210  5%
+
