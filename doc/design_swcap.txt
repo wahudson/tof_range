@@ -1,0 +1,201 @@
+2019-03-10
+		Design for Switched Capacitor TOF
+		---------------------------------
+
+Notes on design, as we proceede.
+
+Acronyms:
+    Time of Flight (TOF)
+    Micro Channel Plate (MCP)
+    Printed Circuit Board (PCB)
+
+Products:
+
+    A)  Full function analog switch and capacitor.
+
+    B)  Fixed capacitor (not switched).
+	    For testing concept in best case conditions.
+
+    C)  Feed thru device, no capacitor, no analog switch.
+	    For testing insertion effects of device.
+
+    D)  Back-to-back Type-N flange connectors.
+	    See if flange bolts provide adaquate ground path.
+
+    E)  Analog switch with only DC control.
+
+    F)  Analog switch with level translator.
+
+    G)  Add power supply.
+
+    H)  Add digital delay control.
+
+
+Situation:
+
+    The TOF MCP detector has an N-Type Jack with Female socket.  Very rugged,
+    built into the vacuum flange.  Cannot be changed.
+
+    The mating cable has an N-Type Plug with Male pin (floating threaded
+    collar to tighten the connection).
+    Looks like RG-58 cable, 50 ohm.
+    Could replace with another connector and cable.
+
+    Pulse edge rate is around 2 V/ns.
+    Pulse height around 5 V, into 50 ohm termination is 100 mA current.
+    Digitizer bandwidth is 500 MHz, with 1 GSPS (Giga Sample Per Second).
+
+    This is very fast edge rates, requiring careful physical design of signal
+    and ground current paths.  Need to control parasitic inductance and
+    capacitance.  Also 100 mA is pretty high current for most
+    fast analog switches.
+
+    The MCP is a charge source.
+    We are primarily interested in integrating the total charge in each
+    peak of the spectrum.  As such, distortion of the peak shape is acceptable,
+    as long as the charge is conserved and individual peaks do not overlap.
+    After all, the principle of the switched-capacitor is to lower and broaden
+    the peaks.
+    However, with the capacitor off, we would like to have good peak fidelity.
+    This may help relax physical layout constraints.
+
+    Signal Polarity:  Is negative (0 V to -5 V or more).
+    This is because electrons land on the MCP anode.
+
+    Control signal:  From external time delay control.
+    ??? What logic levels?
+    ??? Probably single-ended (not differential).
+
+
+----------------------------------------------------------------------------
+## High-level Design
+----------------------------------------------------------------------------
+
+Best vision:  (2019-03-11)
+
+    N-Type connectors adapt to SMA connectors on PCB.
+
+    Capacitor switched to +5 V, which is also an AC ground.
+    Analog switch operates above ground.
+    Thus on the analog switch, NO signal is +5 V, and a -5 V pulse is 0 V.
+
+    Analog input protection:  The MCP can deliver arbitrary large signal
+    voltages.  Must operate to keep voltages within absolute maximums.
+    Normal signal levels may exceed -10 V in pulse height.
+    May want clamp diodes to help protect analog switch, which may be
+    only 5 V tolerant.
+
+    Control signals all single-ended, and we accept slower edge rates and
+    longer propagation delays.
+    Avoid differential signaling and associated complexity.
+
+    Power supplies probably +5 V.
+    Possibly on board LDO (Low Drop-Out voltage) regulators.
+
+
+Alternative Direct implementation:  (is more complex)
+    Capacitor switched to Ground.  Analog switch must operate below ground
+    because the input signal is negative.
+
+    Analog switch passes 0 V to -5 V analog signals.
+    Operates from a negative power supply.
+    Control signals are negative voltage (below ground).
+
+    Level translator/isolator converts positive control input to negative
+    voltage for the analog switch.
+    Possibly additional buffer or signal conditioner will be needed.
+
+    Power supplies probably +5 V and -5 V.
+    Possibly on board LDO regulators.
+
+    All this complexity is avoided with the Capacitor to +5 V above.
+
+Idea:
+    Capacitor need not connect to ground.  Think AC coupled, and allow
+    analog switch to operate above ground.
+    Is this possible?  Yes!
+
+
+----------------------------------------------------------------------------
+## Connector Design
+----------------------------------------------------------------------------
+
+Connector types:
+    We consider only these types, as they are commonly available in a wide
+    range of configurations.
+
+ >  A) N-Type (MCP output)
+ >  B) SMA
+    C) BNC
+
+    In adapters, there are a lot more N-Type to SMA, than N-type to BNC.
+    BNC adapters typically go to 4 GHz, while SMA go to 11 GHz.
+    SMA is smaller than BNC, and a lot more interface to PCB.
+
+    ==> Use SMA connectors on PCB, and adapters to N-Type.
+
+
+----------------------------------------------------------------------------
+## Fixed capacitor (not switched) Procuct (B)
+----------------------------------------------------------------------------
+
+Purpose:
+    Proof of concept.
+    Does adding capacitance produce the desired effect?
+    Measure MCP effective capacitance.
+
+    Somehow add a 100 pF capacitor in-parallel to the N-Type connectors.
+
+Design:
+    Avoid the need to make a PCB.  We want to first see if the idea even has a
+    chance of working.
+
+    Use an SMA T-connector F-M-F, with the Male connecting to an N-type
+    adapter on the MCP.
+
+    Use SMA board edge connectors (Jack, Female socket) with capacitor
+    soldered between the pin and ground lug.  This is then easily connected
+    to the Male T port.  Make several with different capacitor values.
+
+    Place first parts order to implement at least this.
+
+    Another idea:
+    Use two SMA PCB connectors soldered back-to-back.  Add capacitor between
+    center conductor and grounding prongs.
+    This is very in-line, but is harder to make.
+
+
+----------------------------------------------------------------------------
+## Analog switch with only DC control.
+----------------------------------------------------------------------------
+
+Purpose:
+    Prove out analog switch connecting capacitor to MCP output.
+    No dynamic switching needed, just hold switch ON or OFF.
+    Switch OFF - look for parasitic capacitance perturbing the small peak.
+    Switch ON - look to see that intended capacitance is effective in
+    spreading the large peak.
+
+    Typical analog switches seem far from ideal for our situation.
+    OFF capacitance is 10 to 20 pF.
+    ON resistance often > 1 ohm.
+    Bandwidth around 300 MHz, may impede capacitor charging.
+    Switching time is not important for this test, possibly even try
+    really slow ones, e.g. 1 us switching time, to get other parameters
+    better.
+
+Design:
+    A PCB is required.
+
+    Try multiple analog switches, which typically have different footprints,
+    requiring different PCB layouts.
+
+    Possibly put two or three switches on one board, and populate only one,
+    as a way to reduce the number of different PCBs.
+
+    Possibly layout one board as multiple channels, each with a different
+    analog switch.
+
+    Probably allow attachement of a digital control signal.  Just don't
+    delay schedule solving the fast digital control problem.
+

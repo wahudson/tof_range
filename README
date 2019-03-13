@@ -1,0 +1,26 @@
+2019-03-03
+		TOF Spectrometer Dynamic Range
+		------------------------------
+
+Exploring how to improve dynameic range in a Time Of Flight (TOF)
+spectrometer to help resolve a small peak in the presence of a large peak.
+
+See also:
+    /home/var/pro/tof_range/	data
+
+Files:
+------
+README		this file
+
+doc/		documentation
+exp/		experiments
+kicad/		Kicad schematics
+ngspice/
+var/		-> /home/var/pro/tof_range/	symlink to data
+
+
+Repository History:  (newest first)
+----------------------------------------------------------------------------
+
+(2019-03-03)  Initial development
+
